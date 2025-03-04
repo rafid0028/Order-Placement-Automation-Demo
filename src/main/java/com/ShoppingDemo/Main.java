@@ -25,6 +25,10 @@ public class Main {
 		Buy.AddToCart(driver);
 		Thread.sleep(2000);
 		
+		//BackToALlProducts
+		Locate.backToProducts(driver);
+		Thread.sleep(2000);
+		
 		//Opens the cart to check
 		Buy.OpenCart(driver);
 		Thread.sleep(2000);
@@ -33,6 +37,7 @@ public class Main {
 		Locate.continueShopping(driver);
 		Thread.sleep(1000);
 		
+		//Add to cart directly from inventory
 		Buy.AddToCart(driver);
 		Buy.OpenCart(driver);
 		Thread.sleep(2000);

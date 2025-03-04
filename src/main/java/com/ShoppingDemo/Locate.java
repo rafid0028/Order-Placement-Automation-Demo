@@ -25,6 +25,11 @@ public class Locate {
 		allItems.click();
 	}
 	
+	public static void backToProducts (WebDriver driver) {
+		WebElement backTo = driver.findElement(By.xpath("//button[@name=\"back-to-products\"]"));
+		backTo.click();
+	}
+	
 	public static void removeItem (WebDriver driver) {
 		WebElement removeItem = driver.findElement(By.xpath("//button[starts-with(@name,\"remove\")]"));
 		removeItem.click();
@@ -84,13 +89,15 @@ public class Locate {
 		Locate.logIn(driver);
 		
 		Products.findProduct(driver);
-		
+		Thread.sleep(2000);
+		Locate.backToProducts(driver);
+		Thread.sleep(2000);
 		//Locate.backToAllProducts(driver);
-		Buy.AddToCart(driver);
-		Buy.OpenCart(driver);
-		Locate.removeItem(driver);
+		//Buy.AddToCart(driver);
+		//Buy.OpenCart(driver);
+		//Locate.removeItem(driver);
 		
-		Locate.continueShopping(driver);
+		//Locate.continueShopping(driver);
 		
 		//Locate.logOut(driver);
 		
